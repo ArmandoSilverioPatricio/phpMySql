@@ -31,7 +31,12 @@ while ($fila = mysqli_fetch_array($resultQueryProd, MYSQLI_ASSOC)) {
     //Usando  caracteres comodin
     // % cadena de caracteres
     // _ un unico caracter
-    echo "<table><tr><td>";
+
+    // echo "<table><tr><td>";
+    echo "<form action='update.php' method='get'>";
+    //Aqui es como si hubieramos escrito un valor fijo, pero en vez de eso lo rescatamos del array asociativo
+    echo "<input type='text' name='unit_camp' value='" . $fila['c_unidad_nombre'] . "'><br>";
+
     echo $fila['c_unidad_nombre'] . "</td><td>";
     echo $fila['c_unidad_alias'] . "</td><td>";
     echo $fila['d_unidad_fechaalta'] . "</td><td>";
@@ -39,6 +44,5 @@ while ($fila = mysqli_fetch_array($resultQueryProd, MYSQLI_ASSOC)) {
     echo $fila['c_unidad_placa'] . "</td><td></tr></table>";
     echo "<br>";
 }
-
-
 ?>
+
