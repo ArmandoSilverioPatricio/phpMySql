@@ -9,6 +9,7 @@
 </head>
 <body>
 <?php
+    $estatusID = $_GET["estatusID"];
     $estatusName = $_GET["estatusName"];
     require("connection.php");
     $connLab = mysqli_connect($host, $user, $pass);
@@ -21,13 +22,13 @@
     mysqli_select_db($connLab, $dbName) or die ("No se encontro la BD");
     mysqli_set_charset($connLab, "utf8");
 
-    $queryInsert = "INSERT INTO cat_Estatus_copy1 (c_estatus_nombre ) VALUES ('$estatusName')";
+    $queryInsert = "DELETE FROM cat_Estatus_copy1 WHERE n_estatus_id = '$estatusID'";
     $resQueryInsert = mysqli_query($connLab, $queryInsert);
 
     if($resQueryInsert == false){
         echo "Error en la consulta";
     }else{
-        echo "Registro guardado<br><br>";
+        echo "Registro Eliminado<br><br>";
 
         echo "<table><tr><td>$estatusName</td></tr></table>";
     }

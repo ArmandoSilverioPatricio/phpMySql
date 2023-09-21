@@ -9,20 +9,25 @@
     <title>Insertando registros avl lab</title>
 </head>
 <body>
-    <h1>Insercion en cat_Estatus</h1>
-    <form name="estatusName" method="get" action="eliminarRegistros.php">
+    <h1>Eliminar en cat_Estatus</h1>
+    <form name="estatusID" method="get" action="eliminarRegistros.php">
         <table border="0" align="center">
+            <tr>
+                <td>ID del estatus</td>
+                <td><label for="estatusID"></label>
+                <input type="text" name="estatusID" id="estatusID"></td>
+            </tr>
             <tr>
                 <td>Nombre del estado</td>
                 <td><label for="estatusName"></label>
-                <input type="text" name="estatusName" id="estatusName"></td>
+                    <input type="text" name="estatusName" id="estatusName"></td>
             </tr>
             <tr>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td align="center"><input type="submit" name="enviar" id="enviar" value="Enviar !!!"></td>
+                <td align="center"><input type="submit" name="enviar" id="enviar" value="Eliminar !!!"></td>
                 <td align="center"><input type="reset" name="limpiar" id="limpiar"></td>
             </tr>
         </table>
